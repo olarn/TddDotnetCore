@@ -19,7 +19,7 @@ namespace TaxRouter.Controllers
         [HttpGet("{amount}")]
         public ActionResult<string> Get(decimal amount)
         {
-            return (amount / (decimal)1.07).ToString("#.00");
+            return (amount / (decimal)1.07).ToString("#.##");
         }
     }
 }
