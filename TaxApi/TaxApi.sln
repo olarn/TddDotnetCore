@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxLib", "TaxLib\TaxLib.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxTests", "TaxTests\TaxTests.csproj", "{4A95EF1C-1F0A-49B2-B82B-3E804A8F85F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxRepo", "TaxRepo\TaxRepo.csproj", "{B63422BC-EF76-44AE-A541-57E444A86392}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{4A95EF1C-1F0A-49B2-B82B-3E804A8F85F8}.Release|x64.Build.0 = Release|Any CPU
 		{4A95EF1C-1F0A-49B2-B82B-3E804A8F85F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{4A95EF1C-1F0A-49B2-B82B-3E804A8F85F8}.Release|x86.Build.0 = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|x64.Build.0 = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Debug|x86.Build.0 = Debug|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|x64.ActiveCfg = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|x64.Build.0 = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|x86.ActiveCfg = Release|Any CPU
+		{B63422BC-EF76-44AE-A541-57E444A86392}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
