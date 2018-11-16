@@ -1,4 +1,4 @@
-namespace TaxLib
+namespace TaxRepo
 {
     public interface IRepository
     {

@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using Moq;
 using TaxLib;
+using TaxRepo;
 
 namespace TaxTests
 {
