@@ -11,15 +11,15 @@ namespace TaxRouter.Controllers
     public class VatExcludeControllers : ControllerBase
     {
         [HttpGet]
-        public ActionResult<decimal> Get()
+        public ActionResult<double> Get()
         {
             return 7;
         }
 
         [HttpGet("{amount}")]
-        public ActionResult<string> Get(decimal amount)
+        public ActionResult<string> Get(double amount)
         {
-            return (amount / (decimal)1.07).ToString("#.##");
+            return (amount / 1.07).ToString("#.##");
         }
     }
 }
