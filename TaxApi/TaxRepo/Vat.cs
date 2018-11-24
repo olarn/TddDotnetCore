@@ -1,10 +1,11 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace TaxRepo
 {
     public class Vat
     {
-        public int VatRate;
-        public DateTime EffectDate;
+        public int VatId { get; set; }
+        public DateTime EffectDate { get; set; }
     }
 }

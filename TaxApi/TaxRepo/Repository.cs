@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace TaxRepo
@@ -13,7 +14,10 @@ namespace TaxRepo
 
         public decimal getVatRate()
         {
-            throw new System.NotImplementedException();
+            var vat = (from v in db.Vats
+                       orderby v.EffectDate ascending
+                       select v).ToList().FirstOrDefault();
+            return vat.VatId;
         }
     }
 }
