@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TaxRepo;
+using TaxLib;
 
 namespace TaxRouter.Controllers
 {
@@ -11,32 +12,35 @@ namespace TaxRouter.Controllers
     [ApiController]
     public class VatControllers : ControllerBase
     {
-        private readonly TaxContext taxContaxt;
+        private readonly TaxContext db;
+        private Repository taxRepo;
 
         public VatControllers(TaxContext dbContext) 
         {
-            taxContaxt = dbContext;
-            if (taxContaxt.Vats.Count() == 0) 
+            db = dbContext;
+            if (db.Vats.Count() == 0) 
             {
-                taxContaxt.Vats.Add(new Vat { 
+                db.Vats.Add(new Vat { 
                     VatId = 7, 
                     EffectDate = DateTime.Now
                 });
-                taxContaxt.SaveChanges();
+                db.SaveChanges();
             }
+            taxRepo = new Repository(db);
         }
 
         [HttpGet]
         public ActionResult<decimal> Get()
         {
-            var repo = new Repository(taxContaxt);
-            return repo.getVatRate();
+            return taxRepo.getVatRate();
         }
 
         [HttpGet("{amount}")]
-        public ActionResult<string> Get(double amount)
+        public ActionResult<string> Get(decimal amount)
         {
-            return (amount * 1.07).ToString("#.##");
+            var vatCalculator = new VatCalculator();
+            var vatRate = taxRepo.getVatRate();
+            return vatCalculator.calculateVat(amount, vatRate).ToString();
         }
     }
 }
