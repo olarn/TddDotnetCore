@@ -8,7 +8,7 @@ using TaxLib;
 
 namespace TaxRouter.Controllers
 {
-    [Route("api/vat/include")]
+    [Route("api/vat")]
     [ApiController]
     public class VatControllers : ControllerBase
     {
@@ -29,18 +29,26 @@ namespace TaxRouter.Controllers
             taxRepo = new Repository(db);
         }
 
-        [HttpGet]
-        public ActionResult<decimal> Get()
+        [HttpGet("rate")]
+        public ActionResult<decimal> GetVatRate()
         {
             return taxRepo.getVatRate();
         }
 
-        [HttpGet("{amount}")]
-        public ActionResult<string> Get(decimal amount)
+        [HttpGet("include/{amount}")]
+        public ActionResult<decimal> GetTotalAmount(decimal amount)
         {
             var vatCalculator = new VatCalculator();
             var vatRate = taxRepo.getVatRate();
-            return vatCalculator.calculateVat(amount, vatRate).ToString();
+            return vatCalculator.calculateVat(amount, vatRate);
+        }
+
+        [HttpGet("exclude/{totalAmount}")]
+        public ActionResult<decimal> GetExcludedAmount(decimal totalAmount)
+        {
+            var vatCalculator = new VatCalculator();
+            var vatRate = taxRepo.getVatRate();
+            return vatCalculator.excludeVat(totalAmount, vatRate);
         }
     }
 }

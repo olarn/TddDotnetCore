@@ -11,7 +11,7 @@ namespace TaxLib
 
         public decimal excludeVat(decimal totalAmount, decimal vatRate)
         {
-            return totalAmount / (1 + (vatRate / 100));
+            return decimal.Round(totalAmount / (1 + vatRate / 100), 2);
         }
     }
 }

@@ -23,6 +23,7 @@ namespace TaxTests
         [Theory]
         [InlineData(107, 7, 100)]
         [InlineData(110, 10, 100)]
+        [InlineData(100, 7, 93.46)]
         public void Test_CalculateExcludeVat(decimal totalAmount, decimal vatRate, decimal expectedAmount)
         {
             // Act
