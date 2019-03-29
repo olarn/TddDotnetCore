@@ -10,7 +10,7 @@ namespace TaxTests
         [Theory]
         [InlineData(100, 7, 107)]
         [InlineData(100, 10, 110)]
-        public void Test_CalculateVat_WithVatRate(decimal amount, decimal vatRate, decimal expectedTotalAmount) 
+        public void Test_CalculateVat_WithVatRate(decimal amount, decimal vatRate, decimal expectedTotalAmount)
         {
             // Act
             var vatCalculator = new VatCalculator();
@@ -29,10 +29,16 @@ namespace TaxTests
             // Act
             var vatCalculator = new VatCalculator();
             decimal actualAmount = vatCalculator.excludeVat(totalAmount, vatRate);
-            
+
             // Assert
             Assert.True(expectedAmount == actualAmount, $"expected {expectedAmount}, actual {actualAmount}");
         }
 
+        [Fact(Skip = "This is an integration test.")]
+        public void Test_Something()
+        {
+            Console.WriteLine("Skipped ============");
+            Assert.True(false, "Not implemented.");
+        }
     }
 }
